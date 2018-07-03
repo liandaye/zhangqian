@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<audio controls="controls" autoplay="autoplay" preload="auto">
+<audio  preload="auto">
   <source src="1.mp3" type="audio/ogg" id="audio"/>
 </audio>
 
@@ -45,10 +45,14 @@
 	// mps.play(); 
  //微信必须加入Weixin JSAPI的WeixinJSBridgeReady才能生效 
  document.addEventListener("WeixinJSBridgeReady", function () { 
+ 	alert(0)
  mps.play(); 
  }, false); 
  wx.ready(function() {
+ 	alert(1)
     mps.play();
 });
+ //controls="controls" autoplay="autoplay"
+
 </script>
 
