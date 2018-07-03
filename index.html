@@ -17,10 +17,10 @@
 </head>
 <body>
 
-<audio  preload="auto">
+<audio autoplay="autoplay" preload="auto">
   <source src="1.mp3" type="audio/ogg" id="audio"/>
 </audio>
-
+	
 	<img src="image/3.jpg" style="width: 100%;margin-bottom:10px;">
 	<div>
 		&nbsp;我碎碎念的阿呆，好久不见,<em style="font-size: 24px;font-weight: bold;">生日快乐</em>。	
@@ -42,16 +42,16 @@
      col3=Math.floor(Math.random()*256)
     divs.style.color=`rgba(${col1},${col2},${col3},1)`
 	},200)
-	// mps.play(); 
- //微信必须加入Weixin JSAPI的WeixinJSBridgeReady才能生效 
+ mps.load();
+    mps.play();
+    // 兼容在微信里自动播放
+   
+    
  document.addEventListener("WeixinJSBridgeReady", function () { 
- 	alert(0)
+ 	 mps.load();
  mps.play(); 
  }, false); 
- wx.ready(function() {
- 	alert(1)
-    mps.play();
-});
+ 
  //controls="controls" autoplay="autoplay"
 
 </script>
