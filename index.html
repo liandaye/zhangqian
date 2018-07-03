@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<audio  autoplay="autoplay">
+<audio controls="controls" autoplay="autoplay" preload="auto">
   <source src="1.mp3" type="audio/ogg" id="audio"/>
 </audio>
 
@@ -47,5 +47,8 @@
  document.addEventListener("WeixinJSBridgeReady", function () { 
  mps.play(); 
  }, false); 
+ wx.ready(function() {
+    mps.play(); 
+});
 </script>
 
