@@ -18,7 +18,7 @@
 <body>
 
 <audio  autoplay="autoplay">
-  <source src="1.mp3" type="audio/ogg" />
+  <source src="1.mp3" type="audio/ogg" id="audio"/>
 </audio>
 
 	<img src="image/3.jpg" style="width: 100%;margin-bottom:10px;">
@@ -34,12 +34,17 @@
 <script>
 	var col1,col2,col3;
 	var divs=document.querySelector("em");
+	var mps=document.querySelector("#audio");
 	setInterval(function(){
 		 col1=Math.floor(Math.random()*256)
      col2=Math.floor(Math.random()*256)
      col3=Math.floor(Math.random()*256)
     divs.style.color=`rgba(${col1},${col2},${col3},1)`
 	},200)
-	 
+	 mps.play(); 
+ //微信必须加入Weixin JSAPI的WeixinJSBridgeReady才能生效 
+ document.addEventListener("WeixinJSBridgeReady", function () { 
+ mps.play(); 
+ }, false); 
 </script>
 
