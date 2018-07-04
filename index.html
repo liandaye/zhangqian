@@ -44,36 +44,14 @@
     divs.style.color=`rgba(${col1},${col2},${col3},1)`
 	},200)
 
- 		wx.config({
-            // 配置信息, 即使不正确也能使用 wx.ready
-            debug: false,
-            appId: '',
-            timestamp: 1,
-            nonceStr: '',
-            signature: '',
-            jsApiList: []
-        });
-        wx.ready(function() {           
-            mps.play();
-        });
-		var voiceStatu = true;
-		 document.addEventListener("touchstart",function(e){
-            if(voiceStatu){
-                mps.play();
-                voiceStatu = false;
-            }
-        }, false);
+ 	
 
 
 	$(function(){
-    //要执行的js代码段
     
-        //监听 touchstart 事件进而调用 <audio> 元素提供的 play() 方法播放音频
-      
-	/* document.addEventListener("WeixinJSBridgeReady", function () { 
-	 
+	 document.addEventListener("WeixinJSBridgeReady", function () { 	 
 	 	mps.play(); 
-	 }, false); */
+	 }, false); 
 	}); 
  
  //controls="controls" autoplay="autoplay"
