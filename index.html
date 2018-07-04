@@ -30,9 +30,8 @@
 	<img src="image/5.jpg" style="width: 100%;">
 	<p style="text-align: right;padding-right:5px;font-size: 20px;line-height: 50px;">阿呆与阿倩，永远不分离!</p>
 </body>
-</html>
- <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+ <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script>
 	var col1,col2,col3;
 	var divs=document.querySelector("em");
@@ -44,11 +43,9 @@
     divs.style.color=`rgba(${col1},${col2},${col3},1)`
 	},200)
 
- 	
-
-
-	$(function(){
+ 	$(function(){
     var mps=$("#audio");
+    mps.play();
 	 document.addEventListener("WeixinJSBridgeReady", function () { 	 
 	 	mps.play(); 
 	 }, false); 
@@ -57,4 +54,6 @@
  //controls="controls" autoplay="autoplay"
 
 </script>
+</html>
+
 
