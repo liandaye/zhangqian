@@ -36,22 +36,45 @@
 <script>
 	var col1,col2,col3;
 	var divs=document.querySelector("em");
-	var mps=document.querySelector("#audio");
+	var mps=document.getElementById("#audio");
 	setInterval(function(){
 		 col1=Math.floor(Math.random()*256)
      col2=Math.floor(Math.random()*256)
      col3=Math.floor(Math.random()*256)
     divs.style.color=`rgba(${col1},${col2},${col3},1)`
 	},200)
- mps.load();
-    mps.play();
-    // 兼容在微信里自动播放
-   
+
+ 		wx.config({
+            // 配置信息, 即使不正确也能使用 wx.ready
+            debug: false,
+            appId: '',
+            timestamp: 1,
+            nonceStr: '',
+            signature: '',
+            jsApiList: []
+        });
+        wx.ready(function() {           
+            mps.play();
+        });
+		var voiceStatu = true;
+		 document.addEventListener("touchstart",function(e){
+            if(voiceStatu){
+                mps.play();
+                voiceStatu = false;
+            }
+        }, false);
+
+
+	$(function(){
+    //要执行的js代码段
     
- document.addEventListener("WeixinJSBridgeReady", function () { 
- 	 mps.load();
- mps.play(); 
- }, false); 
+        //监听 touchstart 事件进而调用 <audio> 元素提供的 play() 方法播放音频
+      
+	/* document.addEventListener("WeixinJSBridgeReady", function () { 
+	 
+	 	mps.play(); 
+	 }, false); */
+	}); 
  
  //controls="controls" autoplay="autoplay"
 
