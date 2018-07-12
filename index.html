@@ -13,10 +13,25 @@
 			color: #15948f;
 		}
 		p{margin-bottom: 10px;}
+		.music{
+			width: 32px;
+			height: 32px;
+			display: block;
+			position: absolute;
+			left:10px;
+			top: 10px;
+			z-index: 2;
+			cursor: pointer;
+			transition: all 1s;
+			animation: rotate 3s linear infinite;
+		}
+		@-webkit-keyframes rotate{from{-webkit-transform: rotate(0deg)}
+    to{-webkit-transform: rotate(360deg)}
+}
 	</style>
 </head>
 <body>
-
+<img src="image/music.png" alt="" class="music">
 <audio autoplay="autoplay" src="1.mp3" preload="auto" loop="loop" id="audio"></audio>
 	
 	<img src="image/3.jpg" style="width: 100%;margin-bottom:10px;">
@@ -41,13 +56,14 @@
     divs.style.color=`rgba(${col1},${col2},${col3},1)`
 	},200)
 
- 	$(function(){
-    //var mps=$("#audio");
-    $("#audio")[0].play();
+ 	/*$(function(){
 	 document.addEventListener("WeixinJSBridgeReady", function () { 	 
 	 	$("#audio")[0].play(); 
 	 }, false); 
-	}); 
+	}); */
+	$('.music').click(function(){
+	 	$("#audio")[0].play(); 		
+	})
  
  //controls="controls" autoplay="autoplay"
 
